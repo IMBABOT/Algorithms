@@ -1,5 +1,5 @@
 public class Reverse {
-
+//O(n)
     public int[] reverse(int[]arr){
         int start = 0;
         int end = arr.length - 1;
