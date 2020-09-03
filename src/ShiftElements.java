@@ -1,7 +1,7 @@
 public class ShiftElements {
 
 
-    public static void shiftElements(int[] arr, int n){
+    public void shiftElements(int[] arr, int n){
         int Start = 0;
         int End = arr.length - n - 1;
 
@@ -19,7 +19,7 @@ public class ShiftElements {
 
     }
 
-    private static void shiftSecondPart(int[] arr, int n){
+    private  void shiftSecondPart(int[] arr, int n){
         int first = arr.length - n;
         int end = arr.length - 1;
 
@@ -34,7 +34,7 @@ public class ShiftElements {
         }
     }
 
-    private static void shiftWhole(int[] arr, int n){
+    private  void shiftWhole(int[] arr, int n){
         int start = 0;
         int end = arr.length - 1;
 
