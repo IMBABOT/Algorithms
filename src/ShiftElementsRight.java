@@ -1,9 +1,10 @@
-public class ShiftElements {
+public class ShiftElementsRight {
 
 
     public void shiftElements(int[] arr, int n){
         int Start = 0;
-        int End = arr.length - n - 1;
+        int End = arr.length - n - 1;;
+
 
         while (Start < End){
             int temp = arr[Start];
