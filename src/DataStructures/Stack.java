@@ -4,9 +4,13 @@ import java.util.Arrays;
 
 public class Stack {
 
+    public int getSize() {
+        return size;
+    }
+
     private int size;
     private int[] stack;
-    private int top = -1;
+    private int top = 0;
 
 
     public Stack() {
@@ -25,10 +29,9 @@ public class Stack {
            System.arraycopy(stack, 0, temp, 0, stack.length);
            stack = temp;
        }
-       if (top == -1){
-           top = 0;
-       }
+
        stack[top++] = value;
+       size = top;
     }
 
     public int pop(){
@@ -38,6 +41,8 @@ public class Stack {
         }else {
            temp = stack[--top];
         }
+
+        size = top;
         return temp;
     }
 
@@ -47,10 +52,20 @@ public class Stack {
             throw new RuntimeException("Stack is empty");
         }else {
             temp = stack[--top];
-            top++;
+            ++top;
+        }
+        return temp;
+    }
+
+    public int[] reverse(){
+        int[] result = new int[top];
+
+        for (int i = 0; i <result.length ; i++) {
+            result[i] = pop();
         }
 
-        return temp;
+        return result;
+
     }
 
 
@@ -60,12 +75,11 @@ public class Stack {
         String result = "";
 
         for (int i = 0; i < top ; i++) {
-            result +=","  + stack[i];
+           result += " " + stack[i];
         }
 
-        if (top > 1) {
-            result = result.substring(1);
-        }
+        result = result.substring(1);
+
         return result;
     }
 }

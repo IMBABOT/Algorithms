@@ -1,5 +1,7 @@
 package DataStructures;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -13,16 +15,11 @@ public class Main {
         stack.push(25);
         stack.push(152);
 
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
 
 
-       System.out.println(stack);
+        System.out.println(Arrays.toString(stack.reverse()));
+
+      //  System.out.println(stack);
 
 
 
