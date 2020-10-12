@@ -7,6 +7,12 @@ public class Main {
 
         stack.push(1);
         stack.push(1);
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(25);
+        stack.push(152);
+
 
         System.out.println(stack);
 

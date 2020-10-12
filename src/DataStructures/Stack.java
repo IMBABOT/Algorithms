@@ -6,7 +6,7 @@ public class Stack {
 
     private int size;
     private int[] stack;
-    private int top = -1;
+    private int top = 0;
 
 
     public Stack() {
@@ -19,23 +19,23 @@ public class Stack {
         this.stack = new int[size];
     }
 
-    public boolean push(int value){
-        if (top == (stack.length - 1)){
-            return false;
-        }else {
-            top++;
-            stack[top] = value;
-        }
-
-        return true;
+    public void push(int value){
+       if (top == stack.length){
+           int[] temp = new int[stack.length * 2];
+           System.arraycopy(stack, 0, temp, 0, stack.length);
+           stack = temp;
+       }
+       stack[top++] = value;
     }
+
+
 
     @Override
     public String toString() {
         String result = "";
 
-        for (int i = 0; i <= top ; i++) {
-            result +="," + stack[i];
+        for (int i = 0; i < top ; i++) {
+            result +=","  + stack[i];
         }
 
         result = result.substring(1);
