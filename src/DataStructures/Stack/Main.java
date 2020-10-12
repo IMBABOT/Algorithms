@@ -1,4 +1,4 @@
-package DataStructures;
+package DataStructures.Stack;
 
 import java.util.Arrays;
 
@@ -17,7 +17,6 @@ public class Main {
 
 
 
-        System.out.println(Arrays.toString(stack.reverse()));
 
       //  System.out.println(stack);
 
