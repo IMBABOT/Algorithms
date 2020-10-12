@@ -13,13 +13,19 @@ public class Main {
         stack.push(25);
         stack.push(152);
 
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
 
-        System.out.println(stack);
 
-        //push();
-       // pop();
-       // peek();
-       // display();
+       System.out.println(stack);
+
+
+
     }
 
 }
