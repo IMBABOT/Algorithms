@@ -1,5 +1,7 @@
 package DataStructures;
 
+import java.util.Arrays;
+
 public class Stack {
 
     private int size;
@@ -28,4 +30,16 @@ public class Stack {
         return true;
     }
 
+    @Override
+    public String toString() {
+        String result = "";
+
+        for (int i = 0; i <= top ; i++) {
+            result +="," + stack[i];
+        }
+
+        result = result.substring(1);
+
+        return result;
+    }
 }
