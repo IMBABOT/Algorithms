@@ -1,12 +1,11 @@
-public class Swap {
+public class Swap<T> {
 
-    public int[] swap(int first, int second, int arr[]){
-        int temp = arr[first];
+    public T[] changeElements(T[] arr, int first, int second){
+        T temp = arr[first];
         arr[first] = arr[second];
         arr[second] = temp;
 
         return arr;
-
-
     }
 }
+

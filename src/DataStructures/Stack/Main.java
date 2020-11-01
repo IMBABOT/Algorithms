@@ -14,7 +14,11 @@ public class Main {
         stack.push(3);
         stack.push(25);
         stack.push(152);
+        stack.push(123);
 
+        System.out.println(stack.getSize());
+
+        stack.reverse();
 
 
 
