@@ -13,7 +13,6 @@ public class SwitchTwoNumbers {
     public SwitchTwoNumbers(int tries) {
         this.scanner = new Scanner(System.in);
         this.tries = tries;
-
     }
 
     public void switchTwoNumbers(String letter){
