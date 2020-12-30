@@ -1,7 +1,4 @@
-import Sorting.BubbleSort;
-
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Main {
 
@@ -12,10 +9,9 @@ public class Main {
             arr[i] = i;
         }
 
-
-        InsertElement.insertElement(arr, 8, 6);
-
         System.out.println(Arrays.toString(arr));
-
+        System.out.println(DeleteElement.deleteElement(arr, 5));
+        System.out.println(Arrays.toString(arr));
     }
+
 }
