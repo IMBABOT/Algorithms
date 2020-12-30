@@ -1,11 +1,21 @@
+import Sorting.BubbleSort;
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        String q = "q";
-        SwitchTwoNumbers switchNumbers = new SwitchTwoNumbers(10);
-       // switchNumbers.switchTwoNumbers(q);
-        switchNumbers.switchTwoNumbersWithIf(q);
+        int[] arr = new int[10];
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i;
+        }
+
+        System.out.println(Arrays.toString(arr));
+
+       MoveElementToFirstPlace.moveElementToFirstPlace(arr, 2);
+
+        System.out.println(Arrays.toString(arr));
     }
 }

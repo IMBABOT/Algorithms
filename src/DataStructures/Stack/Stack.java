@@ -14,7 +14,7 @@ public class Stack {
 
 
     public Stack() {
-        size = 4;
+        size = 0;
         this.stack = new int[size];
     }
 

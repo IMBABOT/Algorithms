@@ -8,15 +8,7 @@ public class Main {
         Stack stack = new Stack(5);
 
         stack.push(1);
-        stack.push(1);
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        stack.push(25);
-        stack.push(152);
-        stack.push(123);
-
-        System.out.println(stack.getSize());
+        System.out.println(stack.pop());
 
         stack.reverse();
 
