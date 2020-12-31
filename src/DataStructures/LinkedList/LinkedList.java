@@ -27,8 +27,15 @@ public class LinkedList<T> {
 
     private Node head;
 
+    public int getSize() {
+        return size;
+    }
+
+    private int size;
+
     public LinkedList(){
         head = null;
+        size = 0;
     }
 
     public boolean isEmpty(){
@@ -39,6 +46,23 @@ public class LinkedList<T> {
         Node<T> node = new Node<>(t);
         node.next = head;
         head = node;
+        size++;
+    }
+
+    public void insertInSpecific(int index, T t){
+        Node<T> node = new Node<>(t);
+        Node<T> current = head;
+        int i = 0;
+        if (index > size){
+            throw new RuntimeException("Invalid index: " + index);
+        }else {
+            while (i < index){
+                current = current.next;
+                i++;
+            }
+            node.next = current.next;
+            current.next = node;
+        }
     }
 
     public void insertInTail(T t) {
@@ -48,12 +72,14 @@ public class LinkedList<T> {
             current = current.next;
         }
         current.next = node;
+        size++;
     }
 
     public T remove(){
         if (isEmpty()) return null;
         Node<T> remove = head;
         head = head.next;
+        size--;
         return (T) remove;
     }
 
