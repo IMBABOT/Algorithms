@@ -38,6 +38,8 @@ public class LinkedList<T> {
         size = 0;
     }
 
+
+
     public boolean isEmpty(){
         return head == null;
     }
@@ -64,16 +66,24 @@ public class LinkedList<T> {
             node.next = current.next;
             current.next = node;
         }
+        size++;
     }
 
     public void insertInTail(T t) {
         Node<T> node = new Node<>(t);
-        Node<T> current = head;
-        while (current.next != null){
-            current = current.next;
+        if (head == null){
+            head = node;
+            size++;
+        }else if (head !=null) {
+
+            Node<T> current = head;
+
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = node;
+            size++;
         }
-        current.next = node;
-        size++;
     }
 
     public T deleteFromTail(){
@@ -87,12 +97,18 @@ public class LinkedList<T> {
         if(current == head){
             delete = head;
             head = null;
+            size--;
         }else {
             prevnode.next = null;
             delete = current;
+            size--;
         }
         return (T) delete;
     }
+
+//    public T removeFromPosition(int pos){
+//
+//    }
 
     public T remove(){
         if (isEmpty()) return null;
