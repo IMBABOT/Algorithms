@@ -49,6 +49,7 @@ public class LinkedList<T> {
         size++;
     }
 
+
     public void insertInSpecific(int index, T t){
         Node<T> node = new Node<>(t);
         Node<T> current = head;
@@ -73,6 +74,24 @@ public class LinkedList<T> {
         }
         current.next = node;
         size++;
+    }
+
+    public T deleteFromTail(){
+        Node<T> current = head;
+        Node<T> prevnode =  new Node<>(null);
+        Node<T> delete = new Node<>(null);
+        while (current.next != null){
+            prevnode = current;
+            current = current.next;
+        }
+        if(current == head){
+            delete = head;
+            head = null;
+        }else {
+            prevnode.next = null;
+            delete = current;
+        }
+        return (T) delete;
     }
 
     public T remove(){

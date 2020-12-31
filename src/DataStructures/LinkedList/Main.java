@@ -12,5 +12,7 @@ public class Main {
         linkedList.insertInTail(80);
         linkedList.insertInSpecific(1, 40);
         System.out.println(linkedList);
+        linkedList.deleteFromTail();
+        System.out.println(linkedList);
     }
 }
