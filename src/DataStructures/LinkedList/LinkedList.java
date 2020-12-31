@@ -35,10 +35,19 @@ public class LinkedList<T> {
         return head == null;
     }
 
-    public void insert(T t){
+    public void insertInHead(T t){
         Node<T> node = new Node<>(t);
         node.next = head;
         head = node;
+    }
+
+    public void insertInTail(T t) {
+        Node<T> node = new Node<>(t);
+        Node<T> current = head;
+        while (current.next != null){
+            current = current.next;
+        }
+        current.next = node;
     }
 
     public T remove(){
