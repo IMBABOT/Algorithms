@@ -69,6 +69,29 @@ public class LinkedList<T> {
         size++;
     }
 
+
+    public T removeFromPosition(int pos){
+        Node<T> node = new Node<>(null);
+        Node<T> current = head;
+        Node<T> delete = new Node<>(null);
+        int i = 0;
+        if (pos == 0){
+           remove();
+        }else if (pos != 0) {
+            while (i < pos - 1) {
+                current = current.next;
+                i++;
+            }
+            node = current.next;
+            current.next = node.next;
+            delete = node;
+        }
+        return (T) delete;
+
+    }
+
+
+
     public void insertInTail(T t) {
         Node<T> node = new Node<>(t);
         if (head == null){
@@ -106,9 +129,6 @@ public class LinkedList<T> {
         return (T) delete;
     }
 
-//    public T removeFromPosition(int pos){
-//
-//    }
 
     public T remove(){
         if (isEmpty()) return null;

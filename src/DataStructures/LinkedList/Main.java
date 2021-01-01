@@ -11,5 +11,8 @@ public class Main {
         linkedList.insertInTail(3);
         linkedList.insertInTail(4);
         System.out.println(linkedList);
+        linkedList.removeFromPosition(4);
+        System.out.println(linkedList);
+
     }
 }
