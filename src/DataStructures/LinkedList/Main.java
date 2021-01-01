@@ -3,17 +3,15 @@ package DataStructures.LinkedList;
 public class Main {
 
     public static void main(String[] args) {
-        LinkedList<Integer> linkedList = new LinkedList<>();
+        DoublyLinkedList<Integer> doublyLinkedList = new DoublyLinkedList<>();
 
-        linkedList.insertInTail(0);
-        linkedList.insertInTail(1);
-        linkedList.insertInTail(2);
-        linkedList.insertInTail(3);
-        linkedList.insertInTail(4);
-        System.out.println(linkedList);
-        linkedList.reverse();
-        System.out.println(linkedList);
 
+        doublyLinkedList.insert(10);
+        doublyLinkedList.insert(20);
+        doublyLinkedList.insert(30);
+        doublyLinkedList.insert(40);
+
+        System.out.println(doublyLinkedList);
 
     }
 }
