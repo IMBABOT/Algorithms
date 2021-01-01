@@ -139,6 +139,20 @@ public class LinkedList<T> {
         return (T) remove;
     }
 
+    public void reverse(){
+       Node<T> prev = null;
+       Node<T> current = head;
+       Node<T> next = head;
+
+       while (next != null){
+           next = next.next;
+           current.next = prev;
+           prev = current;
+           current = next;
+       }
+       head = prev;
+    }
+
     public int getLength(){
         int length = 0;
         while (head != null){
