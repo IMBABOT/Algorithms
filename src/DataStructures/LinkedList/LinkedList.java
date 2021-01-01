@@ -77,6 +77,7 @@ public class LinkedList<T> {
         int i = 0;
         if (pos == 0){
            remove();
+           size--;
         }else if (pos != 0) {
             while (i < pos - 1) {
                 current = current.next;
@@ -85,9 +86,9 @@ public class LinkedList<T> {
             node = current.next;
             current.next = node.next;
             delete = node;
+            size--;
         }
         return (T) delete;
-
     }
 
 
@@ -136,6 +137,15 @@ public class LinkedList<T> {
         head = head.next;
         size--;
         return (T) remove;
+    }
+
+    public int getLength(){
+        int length = 0;
+        while (head != null){
+            head = head.next;
+            length++;
+        }
+        return length;
     }
 
     @Override
