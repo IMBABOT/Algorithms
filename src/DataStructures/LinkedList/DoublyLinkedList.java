@@ -87,6 +87,26 @@ public class DoublyLinkedList<E> {
         return (E) delete;
     }
 
+    public E deleteFromPosition(int position){
+        Node<E> temp = first;
+        int i = 0;
+        if (position == 1){
+            deleteFromBegin();
+        }else if (position == size){
+            temp = last;
+            deleteFromEnd();
+        }else {
+            while (i < position - 1){
+                temp = temp.next;
+                i++;
+            }
+            temp.prev.next = temp.next;
+            temp.next.prev = temp.prev;
+            size--;
+        }
+        return (E) temp;
+    }
+
     public void insertInPosition(E element, int position){
         Node<E> node = new Node<>(element);
         Node<E> current = first;

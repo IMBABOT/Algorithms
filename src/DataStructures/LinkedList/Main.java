@@ -22,7 +22,7 @@ public class Main {
         doublyLinkedList.deleteFromBegin();
         doublyLinkedList.deleteFromEnd();
         doublyLinkedList.deleteFromEnd();
-
+        doublyLinkedList.deleteFromPosition(5);
 
         System.out.println(doublyLinkedList.size);
 
