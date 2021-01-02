@@ -19,7 +19,9 @@ public class Main {
         doublyLinkedList.insertInBegin(60);
         doublyLinkedList.insertInPosition(80, 3);
         doublyLinkedList.insertInPosition(90, 7);
-
+        doublyLinkedList.deleteFromBegin();
+        doublyLinkedList.deleteFromEnd();
+        doublyLinkedList.deleteFromEnd();
 
 
         System.out.println(doublyLinkedList.size);

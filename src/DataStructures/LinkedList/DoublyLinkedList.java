@@ -60,12 +60,37 @@ public class DoublyLinkedList<E> {
         }
     }
 
+
+    public E deleteFromBegin(){
+        Node<E> delete = first;
+        if (first == null){
+            return null;
+        }else {
+            first = delete.next;
+            first.prev = null;
+            size--;
+        }
+        return (E) delete;
+    }
+
+
+    public E deleteFromEnd(){
+        Node<E> delete = last;
+        if (first == null){
+            return null;
+        }else {
+            last.prev.next = null;
+            last = last.prev;
+            size--;
+        }
+
+        return (E) delete;
+    }
+
     public void insertInPosition(E element, int position){
         Node<E> node = new Node<>(element);
         Node<E> current = first;
-        Node<E> temp = last;
         int i = 0;
-        int j = size;
         if (position > size) {
             throw new RuntimeException("Invalid index: " + position);
         }else if (position == 0){
