@@ -8,10 +8,8 @@ public class DoublyLinkedList<E> {
         Node<E> prev;
 
 
-        public Node(E element, Node<E> next, Node<E> prev){
+        public Node(E element){
             this.element = element;
-            this.next = next;
-            this.prev = prev;
         }
 
 
@@ -38,15 +36,28 @@ public class DoublyLinkedList<E> {
 
     }
 
+    public void insertInEnd(E element){
+       Node<E> node = new Node<>(element);
+        if (first == null){
+           first = last = node;
+       }else {
+            last.next = node;
+            node.prev = last;
+            last = node;
+            size++;
+        }
+    }
+
     public void insertInBegin(E element){
-        Node<E> temp = first;
-        Node<E> newNode = new Node<>(element, first, null);
-        first = newNode;
-        if (first == null)
-            last = newNode;
-        else
-            first.prev = newNode;
-        size++;
+        Node<E> node = new Node<>(element);
+        if (first == null){
+            first = last = node;
+        }else {
+            first.prev = node;
+            node.next = first;
+            first = node;
+            size++;
+        }
     }
 
 
