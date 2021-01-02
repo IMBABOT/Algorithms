@@ -60,6 +60,31 @@ public class DoublyLinkedList<E> {
         }
     }
 
+    public void insertInPosition(E element, int position){
+        Node<E> node = new Node<>(element);
+        Node<E> current = first;
+        Node<E> temp = last;
+        int i = 0;
+        int j = size;
+        if (position > size) {
+            throw new RuntimeException("Invalid index: " + position);
+        }else if (position == 0){
+            insertInBegin(element);
+        }else if (position == size){
+            insertInEnd(element);
+        }else {
+            while (i < position - 1) {
+                current = current.next;
+                i++;
+            }
+            node.prev = current;
+            node.next = current.next;
+            current.next = node;
+            node.next.prev = node;
+        }
+        size++;
+    }
+
 
 
     public boolean isEmpty(){

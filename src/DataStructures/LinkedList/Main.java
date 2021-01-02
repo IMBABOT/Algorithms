@@ -17,6 +17,10 @@ public class Main {
         doublyLinkedList.insertInEnd(50);
         doublyLinkedList.insertInBegin(10);
         doublyLinkedList.insertInBegin(60);
+        doublyLinkedList.insertInPosition(80, 3);
+        doublyLinkedList.insertInPosition(90, 7);
+
+
 
         System.out.println(doublyLinkedList.size);
 
