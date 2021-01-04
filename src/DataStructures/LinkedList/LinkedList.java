@@ -1,5 +1,6 @@
 package DataStructures.LinkedList;
 
+import java.util.Arrays;
 import java.util.Map;
 
 public class LinkedList<T> {
@@ -172,6 +173,7 @@ public class LinkedList<T> {
             current = current.next;
             sb.append((current == null) ? "]" : ", ");
         }
+
 
         return sb.toString();
     }
