@@ -44,7 +44,18 @@ public class DoublyCircularLinkedList<T> {
     }
 
     public void insertAtBegin(T element){
-
+        Node<T> node = new Node<>(element);
+        if (head == null){
+            head = tail = node;
+            node.prev = tail;
+            node.next = head;
+        }else {
+            node.next = head;
+            head.prev = node;
+            node.prev = tail;
+            tail.next = node;
+            head = node;
+        }
     }
 
     @Override

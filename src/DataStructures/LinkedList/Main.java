@@ -2,18 +2,13 @@ package DataStructures.LinkedList;
 public class Main {
 
     public static void main(String[] args) {
-        CircularLinkedList<Integer> circularLinkedList = new CircularLinkedList<>();
-        circularLinkedList.insertAtPosition(1, 10);
-        circularLinkedList.insertAtBegin(20);
-        circularLinkedList.insertAtEnd(80);
-        circularLinkedList.insertAtBegin(10);
-        circularLinkedList.insertAtBegin(50);
-        circularLinkedList.reverse();
+       DoublyCircularLinkedList<Integer> dl = new DoublyCircularLinkedList<>();
+       dl.insertAtBegin(1);
+       dl.insertAtBegin(2);
+       dl.insertAtBegin(3);
+       dl.insertAtBegin(4);
 
-
-        System.out.println(circularLinkedList);
-        System.out.println(circularLinkedList.getSize());
-
+        System.out.println(dl);
 
     }
 }
