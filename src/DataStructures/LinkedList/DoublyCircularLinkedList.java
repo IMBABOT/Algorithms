@@ -56,6 +56,7 @@ public class DoublyCircularLinkedList<T> {
             tail.next = node;
             head = node;
         }
+        size++;
     }
 
     public void insertInEnd(T element){
@@ -70,6 +71,29 @@ public class DoublyCircularLinkedList<T> {
             node.next = head;
             head.prev = node;
             tail = node;
+        }
+        size++;
+    }
+
+    public void insertInPos(int position, T element){
+        Node<T> node = new Node<>(element);
+        int i = 2;
+        if (position == 1){
+            insertAtBegin(element);
+        }
+        if (position == size + 1) {
+            insertInEnd(element);
+        }else {
+            Node<T> temp = tail.next;
+            while (i < position) {
+                temp = temp.next;
+                i++;
+            }
+            node.prev = temp;
+            node.next = temp.next;
+            temp.next.prev = node;
+            temp.next = node;
+            size++;
         }
     }
 
