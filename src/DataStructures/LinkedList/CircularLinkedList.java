@@ -123,6 +123,28 @@ public class CircularLinkedList<T> {
         return (T) delete;
     }
 
+    public T delFromPos(int position){
+        int pos = 0;
+        int i = 0;
+        int l = size;
+        Node<T> current = tail;
+        Node<T> next = tail;
+        if (position == 1){
+            deleteFromBegin();
+        }else if (position == size){
+            deleteFromEnd();
+        }else{
+            while (i < position - 1){
+                current = current.next;
+                i++;
+            }
+            next = current.next;
+            current.next = next.next;
+            size--;
+        }
+        return (T) next;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
