@@ -97,6 +97,21 @@ public class DoublyCircularLinkedList<T> {
         }
     }
 
+    public T deleteFromBegin(){
+        Node<T> delete = head;
+        if (head == null){
+            return null;
+        }else if (head.next == head){
+            head = tail = null;
+        }else{
+            head = head.next;
+            head.prev = tail;
+            tail.next = head;
+            size--;
+        }
+        return (T) delete;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -25,5 +25,10 @@ public class Main {
         dl.insertInPos(3, 14);
         System.out.println(dl);
         System.out.println(dl.getSize());
+        System.out.println(dl.deleteFromBegin());
+        System.out.println(dl.deleteFromBegin());
+        System.out.println(dl.deleteFromBegin());
+        System.out.println(dl);
+        System.out.println(dl.getSize());
     }
 }
