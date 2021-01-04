@@ -63,26 +63,32 @@ public class CircularLinkedList<T> {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder() = "";
+        StringBuilder sb = new StringBuilder();
         if (last != null) {
             Node current = last;
             do {
-                str = str + current.element;
+                sb.append(current.element);
                 current = current.next;
                 if (current != last && current != null) {
-                    str = str + ", ";
+                    sb.append(", ");
                 }
             } while (current != last && current != null);
         }
-
-
-        String[] arr = str.split(",");
+        sb.append(",");
+        String temp = sb.toString();
+        String[]arr = temp.split(",");
         String s = arr[0];
-        String[] res = new String[arr.length];
-        System.arraycopy(arr, 1, res, 0, arr.length-1);
-        res[res.length - 1] = s;
-        String result = "";
-        System.out.println(Arrays.toString(res));
-        return str;
+        String[]shift = new String[arr.length];
+        System.arraycopy(arr, 1, shift, 0, arr.length-1);
+        shift[shift.length - 1] = s;
+        String[]farr = new String[shift.length];
+        for (int i = 0; i <shift.length ; i++) {
+            farr[i] = shift[i].trim();
+        }
+
+        System.out.println(Arrays.toString(farr));
+
+
+        return sb.toString();
     }
 }
