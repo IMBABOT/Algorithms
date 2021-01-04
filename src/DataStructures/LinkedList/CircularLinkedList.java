@@ -99,6 +99,8 @@ public class CircularLinkedList<T> {
             throw new RuntimeException("list is empty: " + size);
         }else if (tail == tail.next){
             tail = null;
+        }else {
+            tail.next = temp.next;
         }
         size--;
         return (T) temp;
