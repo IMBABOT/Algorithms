@@ -19,13 +19,12 @@ public class Main {
         doublyLinkedList.insertInBegin(60);
         doublyLinkedList.insertInPosition(80, 3);
         doublyLinkedList.insertInPosition(90, 7);
-        doublyLinkedList.deleteFromBegin();
-        doublyLinkedList.deleteFromEnd();
-        doublyLinkedList.deleteFromEnd();
         doublyLinkedList.deleteFromPosition(5);
 
         System.out.println(doublyLinkedList.size);
 
+        System.out.println(doublyLinkedList);
+        doublyLinkedList.reverse();
         System.out.println(doublyLinkedList);
 
     }

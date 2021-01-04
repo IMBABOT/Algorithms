@@ -130,6 +130,21 @@ public class DoublyLinkedList<E> {
         size++;
     }
 
+    public void reverse(){
+        Node<E> current = first;
+        Node<E> next;
+
+        while (current != null){
+            next = current.next;
+            current.next = current.prev;
+            current.prev = next;
+            current = next;
+        }
+        current = first;
+        first = last;
+        last = current;
+    }
+
 
 
     public boolean isEmpty(){
