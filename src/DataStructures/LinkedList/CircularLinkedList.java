@@ -124,9 +124,7 @@ public class CircularLinkedList<T> {
     }
 
     public T delFromPos(int position){
-        int pos = 0;
         int i = 0;
-        int l = size;
         Node<T> current = tail;
         Node<T> next = tail;
         if (position == 1){

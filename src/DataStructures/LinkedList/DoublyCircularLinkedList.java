@@ -128,6 +128,30 @@ public class DoublyCircularLinkedList<T> {
         return (T) delete;
     }
 
+    public T deleteFromPos(int pos){
+        int i = 0;
+        Node<T> temp = head;
+        if (pos == 1){
+            deleteFromBegin();
+        }else if (pos == size){
+            deleteFromEnd();
+        }else {
+            while (i < pos -1){
+                temp = temp.next;
+                i++;
+            }
+            temp.prev.next = temp.next;
+            temp.next.prev = temp.prev;
+            size--;
+            if (temp.next == head){
+                tail = temp.prev;
+                size--;
+            }
+        }
+        return (T) temp;
+    }
+
+
 
     @Override
     public String toString() {

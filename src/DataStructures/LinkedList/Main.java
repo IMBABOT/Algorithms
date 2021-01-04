@@ -25,12 +25,28 @@ public class Main {
         dl.insertInPos(3, 14);
         System.out.println(dl);
         System.out.println(dl.deleteFromEnd());
+        System.out.println(dl);
         System.out.println(dl.deleteFromEnd());
-        System.out.println(dl.deleteFromEnd());
+        System.out.println(dl);
         System.out.println(dl.deleteFromBegin());
         System.out.println(dl.deleteFromBegin());
         System.out.println(dl);
+        System.out.println(dl.deleteFromPos(2));
+        System.out.println(dl);
         System.out.println(dl.getSize());
+        System.out.println(dl.deleteFromEnd());
+        System.out.println(dl);
+        System.out.println(dl.deleteFromBegin());
+        System.out.println(dl);
+        System.out.println(dl.deleteFromPos(1));
+        System.out.println(dl);
+        System.out.println(dl.getSize());
+        System.out.println(dl.deleteFromEnd());
+        System.out.println(dl);
+        System.out.println(dl.deleteFromPos(4));
+        System.out.println(dl);
+        System.out.println(dl.getSize());
+
 
     }
 }
