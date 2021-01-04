@@ -28,14 +28,12 @@ public class CircularLinkedList<T> {
 
 
     private int size;
-    private Node last;
-    private Node current;
+    private Node tail;
 
 
     public CircularLinkedList() {
         this.size = 0;
-        this.last = null;
-        this.current = null;
+        this.tail = null;
     }
 
     public int getSize() {
@@ -47,16 +45,14 @@ public class CircularLinkedList<T> {
     }
 
     public void insertAtBegin(T t) {
-        Node<T> node = new Node<>(t);
-        if (current == null) {
-            current = node;
-            last = node;
-            node.next = node;
+       Node<T> node = new Node<>(t);
+        if (tail == null){
+            tail = node;
+            tail.next = node;
             size++;
-        } else {
-            last.next = node;
-            node.next = current;
-            current = node;
+        }else{
+            node.next = tail.next;
+            tail.next = node;
             size++;
         }
     }
@@ -64,15 +60,15 @@ public class CircularLinkedList<T> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        if (last != null) {
-            Node current = last;
+        if (tail != null) {
+            Node current = tail;
             do {
                 sb.append(current.element);
                 current = current.next;
-                if (current != last && current != null) {
+                if (current != tail && current != null) {
                     sb.append(", ");
                 }
-            } while (current != last && current != null);
+            } while (current != tail && current != null);
         }
         sb.append(",");
         String temp = sb.toString();
