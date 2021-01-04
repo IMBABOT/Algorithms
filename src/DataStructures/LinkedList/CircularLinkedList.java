@@ -145,6 +145,20 @@ public class CircularLinkedList<T> {
         return (T) next;
     }
 
+    public void reverse(){
+        Node<T> current = tail.next;
+        Node<T> prev = tail.next;
+        Node<T> next = current.next;
+        while (current != tail){
+            prev = current;
+            current = next;
+            next = current.next;
+            current.next = prev;
+        }
+        next.next = tail;
+        tail = next;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

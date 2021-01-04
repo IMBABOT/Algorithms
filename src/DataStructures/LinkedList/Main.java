@@ -8,11 +8,8 @@ public class Main {
         circularLinkedList.insertAtEnd(80);
         circularLinkedList.insertAtBegin(10);
         circularLinkedList.insertAtBegin(50);
+        circularLinkedList.reverse();
 
-        circularLinkedList.delFromPos(2);
-        circularLinkedList.delFromPos(3);
-        circularLinkedList.delFromPos(3);
-        circularLinkedList.delFromPos(2);
 
         System.out.println(circularLinkedList);
         System.out.println(circularLinkedList.getSize());
