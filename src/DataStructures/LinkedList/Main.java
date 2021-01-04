@@ -10,6 +10,8 @@ public class Main {
         circularLinkedList.insertAtBegin(1);
         circularLinkedList.insertAtBegin(2);
         circularLinkedList.insertAtBegin(3);
+        circularLinkedList.insertAtEnd(4);
+        circularLinkedList.insertAtEnd(5);
 
 
         System.out.println(circularLinkedList.getSize());

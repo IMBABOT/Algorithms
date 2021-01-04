@@ -57,6 +57,19 @@ public class CircularLinkedList<T> {
         }
     }
 
+    public void insertAtEnd(T t){
+        Node<T> node = new Node<>(t);
+        if (tail == null) {
+            tail = node;
+            tail.next = node;
+            size++;
+        }else {
+            node.next = tail.next;
+            tail.next = node;
+            tail = node;
+        }
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
