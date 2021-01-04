@@ -67,6 +67,29 @@ public class CircularLinkedList<T> {
             node.next = tail.next;
             tail.next = node;
             tail = node;
+            size++;
+        }
+    }
+
+    public void insertAtPosition(int position, T t){
+        Node<T> node = new Node<>(t);
+        Node<T> temp = tail.next;
+        int i = 1;
+        while (i < position - 1) {
+            temp = temp.next;
+            i++;
+        }
+        node.next = temp.next;
+        temp.next = node;
+        size++;
+
+        if (size < position){
+            throw new RuntimeException("Invalid position: " + position);
+        }
+        if (position == size){
+            insertAtEnd(t);
+        }else if (position == 1){
+            insertAtBegin(t);
         }
     }
 
