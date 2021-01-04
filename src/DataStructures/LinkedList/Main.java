@@ -13,6 +13,11 @@ public class Main {
         circularLinkedList.insertAtBegin(4);
         circularLinkedList.insertAtBegin(5);
         circularLinkedList.insertAtBegin(8);
+        circularLinkedList.insertInEnd(1);
+        circularLinkedList.insertInEnd(56);
+        circularLinkedList.insertInEnd(856);
+        circularLinkedList.insertAtBegin(1);
+        circularLinkedList.insertInEnd(85);
 
         System.out.println(circularLinkedList);
 
