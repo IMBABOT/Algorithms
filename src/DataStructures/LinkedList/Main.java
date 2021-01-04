@@ -1,26 +1,15 @@
 package DataStructures.LinkedList;
-
-
-import java.util.LinkedList;
-
 public class Main {
 
     public static void main(String[] args) {
         CircularLinkedList<Integer> circularLinkedList = new CircularLinkedList<>();
+        circularLinkedList.insertAtPosition(1, 10);
         circularLinkedList.insertAtBegin(20);
-        circularLinkedList.insertAtBegin(40);
-        circularLinkedList.insertAtBegin(30);
-        circularLinkedList.insertAtPosition(2, 40);
-        circularLinkedList.insertAtBegin(50);
-        System.out.println(circularLinkedList.deleteFromBegin());
+        circularLinkedList.insertAtEnd(80);
 
 
-
-
+        System.out.println(circularLinkedList);
         System.out.println(circularLinkedList.getSize());
-         System.out.println(circularLinkedList);
-
-
 
 
     }

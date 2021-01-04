@@ -73,23 +73,20 @@ public class CircularLinkedList<T> {
 
     public void insertAtPosition(int position, T t){
         Node<T> node = new Node<>(t);
-        Node<T> temp = tail.next;
         int i = 1;
-        while (i < position - 1) {
-            temp = temp.next;
-            i++;
-        }
-        node.next = temp.next;
-        temp.next = node;
-        size++;
-
-        if (size < position){
-            throw new RuntimeException("Invalid position: " + position);
-        }
-        if (position == size){
-            insertAtEnd(t);
-        }else if (position == 1){
+        if (position == 1){
             insertAtBegin(t);
+        }else if (position == size){
+            insertAtEnd(t);
+        }else {
+            Node<T> temp = tail.next;
+            while (i < position) {
+                temp = temp.next;
+                i++;
+            }
+            node.next = temp.next;
+            temp.next = node;
+            size++;
         }
     }
 
@@ -104,6 +101,26 @@ public class CircularLinkedList<T> {
         }
         size--;
         return (T) temp;
+    }
+
+    public T deleteFromEnd(){
+        Node<T> current = tail.next;
+        Node<T> delete = tail.next;
+        if (size == 0){
+            throw new RuntimeException("list is empty: " + size);
+        }else if (tail.next == tail){
+            delete = tail;
+            tail = null;
+        }else {
+            while (current.next != tail.next){
+                delete = current;
+                current = current.next;
+            }
+            delete.next = tail.next;
+            tail = delete;
+        }
+        size--;
+        return (T) delete;
     }
 
     @Override
