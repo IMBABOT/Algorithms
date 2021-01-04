@@ -31,7 +31,7 @@ public class DoublyCircularLinkedList<T> {
 
     private int size;
     private Node head;
-    public  Node tail;
+    private Node tail;
 
     public int getSize() {
         return size;
@@ -55,6 +55,21 @@ public class DoublyCircularLinkedList<T> {
             node.prev = tail;
             tail.next = node;
             head = node;
+        }
+    }
+
+    public void insertInEnd(T element){
+        Node<T> node = new Node<>(element);
+        if (head == null) {
+            head = tail = node;
+            node.prev = tail;
+            node.next = head;
+        }else {
+            node.prev = tail;
+            tail.next = node;
+            node.next = head;
+            head.prev = node;
+            tail = node;
         }
     }
 

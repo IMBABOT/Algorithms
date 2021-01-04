@@ -8,6 +8,9 @@ public class Main {
        dl.insertAtBegin(3);
        dl.insertAtBegin(4);
 
+       dl.insertInEnd(5);
+       dl.insertInEnd(8);
+
         System.out.println(dl);
 
     }
