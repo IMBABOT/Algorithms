@@ -93,9 +93,21 @@ public class CircularLinkedList<T> {
         }
     }
 
+    public T deleteFromBegin(){
+        Node<T> temp = tail.next;
+        if (size == 0){
+            throw new RuntimeException("list is empty: " + size);
+        }else if (tail == tail.next){
+            tail = null;
+        }
+        size--;
+        return (T) temp;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        String finalstr = "";
         if (tail != null) {
             Node current = tail;
             do {
@@ -109,15 +121,17 @@ public class CircularLinkedList<T> {
         sb.append(",");
         String temp = sb.toString();
         String[]arr = temp.split(",");
-        String s = arr[0];
-        String[]shift = new String[arr.length];
-        System.arraycopy(arr, 1, shift, 0, arr.length-1);
-        shift[shift.length - 1] = s;
-        String[]farr = new String[shift.length];
-        for (int i = 0; i <shift.length ; i++) {
-            farr[i] = shift[i].trim();
+        if (temp.length() > 1) {
+            String s = arr[0];
+            String[] shift = new String[arr.length];
+            System.arraycopy(arr, 1, shift, 0, arr.length - 1);
+            shift[shift.length - 1] = s;
+            String[] farr = new String[shift.length];
+            for (int i = 0; i < shift.length; i++) {
+                farr[i] = shift[i].trim();
+            }
+            finalstr = Arrays.toString(farr);
         }
-        String finalstr = Arrays.toString(farr);
         return finalstr;
     }
 }
