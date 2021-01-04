@@ -85,10 +85,7 @@ public class CircularLinkedList<T> {
         for (int i = 0; i <shift.length ; i++) {
             farr[i] = shift[i].trim();
         }
-
-        System.out.println(Arrays.toString(farr));
-
-
-        return sb.toString();
+        String finalstr = Arrays.toString(farr);
+        return finalstr;
     }
 }
