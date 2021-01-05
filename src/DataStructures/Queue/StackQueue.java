@@ -12,6 +12,8 @@ public class StackQueue<T> {
     private int top2;
     private int count1;
 
+    private Object[] arr;
+
 
     public StackQueue(){
         first = new GenericStack<>();
@@ -72,24 +74,23 @@ public class StackQueue<T> {
 
     public T peek(){
         Object[]temp = first.peekElement();
-        System.out.println(Arrays.toString(temp));
         return (T) temp[count1];
     }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("]");
-        for (int i = 0; i < top1; i++) {
-            sb.append(first.pop());
-            sb.append((i == top1) ? "]" : " ,");
-        }
-        if (sb.length() == 1){
+        StringBuilder sb = new StringBuilder("[");
+        Object[]temp = first.peekElement();
+        if (count1 == temp.length -1){
             throw new RuntimeException("Queue is empty");
         }
-        sb.deleteCharAt(sb.length()-2);
+        for (int i = count1; i <temp.length ; i++) {
+            sb.append(temp[i] + "," + " ");
+        }
+
         sb.deleteCharAt(sb.length()-1);
-        sb.append("[");
-        sb.reverse();
+        sb.deleteCharAt(sb.length()-1);
+        sb.append("]");
 
         return sb.toString();
     }

@@ -9,14 +9,20 @@ public class Main {
         stackQueue.enqueue(3);
         stackQueue.enqueue(4);
 
-        System.out.println(stackQueue.dequeue());
-        System.out.println(stackQueue.peek());
-        System.out.println(stackQueue.dequeue());
-        System.out.println(stackQueue.peek());
+
+        System.out.println(stackQueue);
         System.out.println(stackQueue.dequeue());
         System.out.println(stackQueue.peek());
         System.out.println(stackQueue);
-
+        System.out.println(stackQueue.peek());
+        System.out.println(stackQueue.dequeue());
+        System.out.println(stackQueue);
+        System.out.println(stackQueue.peek());
+        System.out.println(stackQueue.dequeue());
+        System.out.println(stackQueue);
+        System.out.println(stackQueue.peek());
+        System.out.println(stackQueue.dequeue());
+        System.out.println(stackQueue);
 
 
 

@@ -1,8 +1,8 @@
 public class Reverse {
-//O(n)
+    //O(n)
     public int[] reverse(int[]arr){
         int start = 0;
-        int end = arr.length - 1;
+        int end = arr.length;
 
         while (start < end){
             int temp = arr[start];
