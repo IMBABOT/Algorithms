@@ -18,6 +18,10 @@ public class Stack {
         this.stack = new int[size];
     }
 
+    public boolean isEmpty(){
+        return size == 0;
+    }
+
     public Stack(int size) {
         this.size = size;
         this.stack = new int[size];
