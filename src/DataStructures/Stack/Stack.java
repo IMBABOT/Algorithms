@@ -76,14 +76,13 @@ public class Stack {
 
     @Override
     public String toString() {
-        String result = "";
-
+        StringBuilder sb = new StringBuilder("[");
         for (int i = 0; i < top ; i++) {
-           result += " " + stack[i];
+            sb.append(stack[i] + "," + " ");
         }
-
-        result = result.substring(1);
-
-        return result;
+        sb.deleteCharAt(sb.length()-2);
+        sb.deleteCharAt(sb.length()-1);
+        sb.append("]");
+        return sb.toString();
     }
 }
