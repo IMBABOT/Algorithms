@@ -3,14 +3,13 @@ package DataStructures.Queue;
 public class Main {
 
     public static void main(String[] args) {
-        Queue<Integer> queue = new Queue<>(10);
-        queue.enqueue(20);
-        queue.enqueue(30);
-        queue.enqueue(40);
-        queue.enqueue(40);
-        System.out.println(queue.dequeue());
-        System.out.println(queue.peek());
-        System.out.println(queue);
+        LinkedQueue<Integer> linkedQueue = new LinkedQueue<>();
+        linkedQueue.enqueue(1);
+        linkedQueue.enqueue(2);
+        linkedQueue.enqueue(3);
+
+        System.out.println(linkedQueue);
+        System.out.println(linkedQueue.getSize());
 
     }
 }
