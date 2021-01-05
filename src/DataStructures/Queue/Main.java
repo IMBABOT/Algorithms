@@ -3,13 +3,24 @@ package DataStructures.Queue;
 public class Main {
 
     public static void main(String[] args) {
-        LinkedQueue<Integer> linkedQueue = new LinkedQueue<>();
-        linkedQueue.enqueue(1);
-        linkedQueue.enqueue(2);
-        linkedQueue.enqueue(3);
-
-        System.out.println(linkedQueue);
-        System.out.println(linkedQueue.getSize());
-
+        CircularQueue<Integer> circularQueue = new CircularQueue<>();
+        circularQueue.enqueue(1);
+        circularQueue.enqueue(2);
+        circularQueue.enqueue(3);
+        circularQueue.enqueue(56);
+        circularQueue.enqueue(56);
+        circularQueue.enqueue(56);
+        circularQueue.enqueue(56);
+        circularQueue.enqueue(56);
+        circularQueue.enqueue(56);
+        circularQueue.enqueue(56);
+        System.out.println(circularQueue);
+        System.out.println(circularQueue.getSize());
+        System.out.println(circularQueue.peek());
+        System.out.println(circularQueue.dequeue());
+        System.out.println(circularQueue.dequeue());
+        System.out.println(circularQueue);
+        System.out.println(circularQueue.peek());
+        System.out.println(circularQueue);
     }
 }

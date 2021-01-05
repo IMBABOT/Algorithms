@@ -1,7 +1,5 @@
 package DataStructures.Queue;
 
-import DataStructures.LinkedList.LinkedList;
-
 public class LinkedQueue<T> {
     private static class Node<T>{
         T element;
@@ -54,6 +52,25 @@ public class LinkedQueue<T> {
             rear = node;
             size++;
         }
+    }
+
+    public T peek(){
+        Node<T> result = front;
+        if (front == null && rear == null){
+            throw new RuntimeException("Queue is empty:");
+        }
+        return (T) result;
+    }
+
+    public T dequeue(){
+        Node<T> temp = front;
+        if (front == null && rear == null){
+            throw new RuntimeException("Queue is empty:");
+        }else {
+            front = front.next;
+            size--;
+        }
+        return (T) temp;
     }
 
     public boolean isEmpty(){
