@@ -50,6 +50,7 @@ public class StackQueue<T> {
                 push2(temp);
             }
             element = pop2();
+            count1++;
             count--;
             for (int i = 0; i < count; i++) {
                 temp = pop2();
@@ -69,10 +70,11 @@ public class StackQueue<T> {
         return second.pop();
     }
 
-//    public T peek(){
-//        Object[]temp = first.peekElement();
-//        return (T) temp[count1];
-//    }
+    public T peek(){
+        Object[]temp = first.peekElement();
+        System.out.println(Arrays.toString(temp));
+        return (T) temp[count1];
+    }
 
     @Override
     public String toString() {
