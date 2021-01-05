@@ -57,6 +57,17 @@ public class Queue<T> {
         return element;
     }
 
+    public T peek() {
+        T element;
+        if (front == -1 && rear == -1) {
+            throw new RuntimeException("queue is empty");
+        }else {
+            element = (T) queue[front];
+        }
+        return element;
+    }
+
+
 
     @Override
     public String toString() {
