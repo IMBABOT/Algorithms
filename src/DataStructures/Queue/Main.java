@@ -13,6 +13,13 @@ public class Main {
        linkedCircularQueue.enqueue(7);
        linkedCircularQueue.enqueue(8);
 
+        System.out.println(linkedCircularQueue.dequeue());
+        System.out.println(linkedCircularQueue.dequeue());
+        System.out.println(linkedCircularQueue.dequeue());
+        System.out.println(linkedCircularQueue.dequeue());
+        System.out.println(linkedCircularQueue.peek());
+        System.out.println(linkedCircularQueue.peek());
+
         System.out.println(linkedCircularQueue);
         System.out.println(linkedCircularQueue.getSize());
     }

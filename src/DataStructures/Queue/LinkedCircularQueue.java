@@ -63,6 +63,34 @@ public class LinkedCircularQueue<T> {
         }
     }
 
+    public T dequeue(){
+        Node temp = front;
+        if (front == null && rear == null) {
+            throw new RuntimeException("Queue is empty");
+        }else if (front == rear){
+            temp = front;
+            front = rear = null;
+            size--;
+        }else {
+            front = front.next;
+            rear.next = front;
+            size--;
+        }
+
+        return (T) temp;
+    }
+
+    public T peek(){
+        Node temp = front;
+        if (front == null && rear == null) {
+            throw new RuntimeException("Queue is empty");
+        }else {
+            temp = front;
+        }
+
+        return (T) temp;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
