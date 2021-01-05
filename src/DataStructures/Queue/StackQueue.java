@@ -2,12 +2,16 @@ package DataStructures.Queue;
 
 import DataStructures.Stack.GenericStack;
 
+import java.util.Arrays;
+
 public class StackQueue<T> {
     private GenericStack<T> first;
     private GenericStack<T> second;
     private int count;
     private int top1;
     private int top2;
+    private int count1;
+
 
     public StackQueue(){
         first = new GenericStack<>();
@@ -15,6 +19,7 @@ public class StackQueue<T> {
         count = 0;
         top1 = 0;
         top2 = 0;
+        count1 = 0;
     }
 
     public void enqueue(T element){
@@ -64,23 +69,25 @@ public class StackQueue<T> {
         return second.pop();
     }
 
-    public T peek(){
-        return first.peek();
-    }
+//    public T peek(){
+//        Object[]temp = first.peekElement();
+//        return (T) temp[count1];
+//    }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("[");
+        StringBuilder sb = new StringBuilder("]");
         for (int i = 0; i < top1; i++) {
             sb.append(first.pop());
-            sb.append((i == top1) ? "]" : ", ");
+            sb.append((i == top1) ? "]" : " ,");
         }
         if (sb.length() == 1){
             throw new RuntimeException("Queue is empty");
         }
         sb.deleteCharAt(sb.length()-2);
         sb.deleteCharAt(sb.length()-1);
-        sb.append("]");
+        sb.append("[");
+        sb.reverse();
 
         return sb.toString();
     }
