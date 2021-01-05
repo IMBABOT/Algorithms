@@ -24,7 +24,7 @@ public class CircularQueue<T> {
     }
 
 
-    public void enqueue(int element) {
+    public void enqueue(T element) {
         if (front == -1 && rear == -1) {
             front++;
             rear++;
@@ -77,7 +77,7 @@ public class CircularQueue<T> {
         }else if (front == rear){
             sb.append(queue[front] + "]");
         }else {
-            while (i < length){
+            while (i < rear+1){
                 sb.append(queue[i]);
                 i++;
                 sb.append((i == rear+1) ? "]" : ", ");
@@ -86,5 +86,6 @@ public class CircularQueue<T> {
         return sb.toString();
     }
 }
+
 
 
