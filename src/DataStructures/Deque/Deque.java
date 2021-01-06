@@ -13,8 +13,8 @@ public class Deque<T> {
 
     private int size;
 
-    public Deque(){
-        length = 5;
+    public Deque(int length){
+        this.length = 5;
         arr = new Object[length];
         front = -1;
         rear = -1;
@@ -33,7 +33,7 @@ public class Deque<T> {
     public void enqueueFront(T element){
        if ((size == -1 && front == -1) || (front == rear + 1)){
            throw new RuntimeException("Deque is full");
-        }else if (front == - 1 && rear == -1){
+        } else if (front == - 1 && rear == -1){
             front++;
             rear++;
             arr[front] = element;
@@ -66,6 +66,26 @@ public class Deque<T> {
             arr[rear] = element;
             size++;
         }
+    }
+
+    public T dequeFront() {
+        T delete = null;
+        if ((size == -1 && front == -1) || (front == rear + 1)) {
+            throw new RuntimeException("Deque is full");
+        }else if (front == rear){
+            delete = (T) arr[front];
+            front = rear = -1;
+            size--;
+        }else if (front == length - 1){
+            delete = (T) arr[front];
+            front = 0;
+            size--;
+        }else {
+            delete = (T) arr[front];
+            front++;
+            size--;
+        }
+        return (T) delete;
     }
 
     @Override
