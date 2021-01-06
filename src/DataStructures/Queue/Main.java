@@ -13,17 +13,25 @@ public class Main {
         System.out.println(stackQueue);
         System.out.println(stackQueue.dequeue());
         System.out.println(stackQueue.peek());
-        System.out.println(stackQueue);
-        System.out.println(stackQueue.peek());
         System.out.println(stackQueue.dequeue());
-        System.out.println(stackQueue);
         System.out.println(stackQueue.peek());
-        System.out.println(stackQueue.dequeue());
         System.out.println(stackQueue);
+        System.out.println(stackQueue.dequeue());
         System.out.println(stackQueue.peek());
-        System.out.println(stackQueue.dequeue());
-        System.out.println(stackQueue);
 
+
+
+        CircularQueue<Integer> circularQueue = new CircularQueue<>();
+        circularQueue.enqueue(1);
+        circularQueue.enqueue(2);
+        circularQueue.enqueue(3);
+        circularQueue.enqueue(4);
+
+        System.out.println(circularQueue.dequeue());
+        System.out.println(circularQueue.dequeue());
+        System.out.println(circularQueue.dequeue());
+        System.out.println(circularQueue.dequeue());
+        System.out.println(circularQueue);
 
 
 
