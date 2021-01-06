@@ -14,7 +14,7 @@ public class Deque<T> {
     private int size;
 
     public Deque(int length){
-        this.length = 5;
+        this.length = length;
         arr = new Object[length];
         front = -1;
         rear = -1;
@@ -83,6 +83,27 @@ public class Deque<T> {
         }else {
             delete = (T) arr[front];
             front++;
+            size--;
+        }
+        return (T) delete;
+    }
+
+
+    public T dequeRear() {
+        T delete = null;
+        if ((size == -1 && front == -1) || (front == rear + 1)) {
+            throw new RuntimeException("Deque is full");
+        }else if (front == rear){
+            delete = (T) arr[rear];
+            front = rear = -1;
+            size--;
+        }else if (rear == 0){
+            delete = (T) arr[rear];
+            rear = length - 1;
+            size--;
+        }else {
+            delete = (T) arr[rear];
+            rear--;
             size--;
         }
         return (T) delete;
