@@ -20,19 +20,8 @@ public class Main {
         deque.enqueueFront(1);
 
 
-        System.out.println(deque.dequeRear());
-        System.out.println(deque.dequeRear());
-        System.out.println(deque.dequeRear());
-        System.out.println(deque.dequeRear());
-        System.out.println(deque.dequeRear());
-        System.out.println(deque.dequeRear());
-        System.out.println(deque.dequeRear());
-        System.out.println(deque.dequeRear());
-        System.out.println(deque.dequeRear());
-        System.out.println(deque.dequeRear());
-        System.out.println(deque.dequeFront());
-        System.out.println(deque.dequeFront());
-        System.out.println(deque.dequeFront());
+
+
 
 
 
