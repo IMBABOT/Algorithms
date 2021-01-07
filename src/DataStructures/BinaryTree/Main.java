@@ -9,6 +9,8 @@ public class Main {
         tree.insert(3);
         tree.insert(-1);
         tree.insert(-3);
-        tree.displayTree();
+        //tree.inOrderDisplay();
+        //tree.displayPreorder();
+        tree.displayPostorder();
     }
 }
