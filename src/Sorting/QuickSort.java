@@ -24,8 +24,8 @@ public class QuickSort {
             }
             swap(arr, start, end);
         }
+        swap(arr, 0, end);
         System.out.println(Arrays.toString(arr));
-        System.out.println(arr[start]);
 
     }
 
