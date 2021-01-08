@@ -28,18 +28,13 @@ public class RecursiveBinaryTree {
         if (currentparent == null) {
             return node;
         } else if (node.element > currentparent.element) {
-            Node lchild = insertNode(currentparent.left, node);
-            node.left = lchild;
-
-            lchild.parent = node;
+            currentparent.left = insertNode(currentparent.left, node);
         } else if (node.element < currentparent.element) {
-            Node rchild = insertNode(currentparent.right, node);
-            node.right = rchild;
-
-            rchild.parent = node;
+            currentparent.right = insertNode(currentparent.right, node);
         }
         return currentparent;
     }
+
 
 
     public void preOrder() {
