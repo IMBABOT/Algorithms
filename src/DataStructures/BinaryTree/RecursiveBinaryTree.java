@@ -6,6 +6,7 @@ public class RecursiveBinaryTree {
         private int element;
         private Node left;
         private Node right;
+        private Node parent;
 
         private Node(int element) {
             this.element = element;
@@ -27,9 +28,15 @@ public class RecursiveBinaryTree {
         if (currentparent == null) {
             return node;
         } else if (node.element > currentparent.element) {
-            currentparent.left = insertNode(currentparent.left, node);
+            Node lchild = insertNode(currentparent.left, node);
+            node.left = lchild;
+
+            lchild.parent = node;
         } else if (node.element < currentparent.element) {
-            currentparent.right = insertNode(currentparent.right, node);
+            Node rchild = insertNode(currentparent.right, node);
+            node.right = rchild;
+
+            rchild.parent = node;
         }
         return currentparent;
     }

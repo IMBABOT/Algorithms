@@ -46,7 +46,7 @@ public class BinaryTree {
                 root = node;
             }else {
                 Node current = root;
-                Node previous;
+                Node previous = null;
                 while (true){
                     previous = current;
                     if (element < current.element){
@@ -71,6 +71,9 @@ public class BinaryTree {
         }
 
         private void inOrderTravers(Node current){
+            if (current == null){
+                return;
+            }
             inOrderTravers(current.left);
             System.out.println(root);
             inOrderTravers(current.right);
