@@ -1,8 +1,14 @@
+import Sorting.BubbleSort;
+
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{1, 8, 10, 12, 16, 35, 66, 77, 78};
-        System.out.println(BinarySearch.binarySearch(arr, 78));
+        Integer[] arr = new Integer[]{3, -1, 10, 5, 8, 12, 34, 21, 12, 11, 10};
+        BubbleSort<Integer> sort = new BubbleSort<>();
+        sort.bubbleSort(arr);
+        System.out.println(Arrays.toString(arr));
 
     }
 
