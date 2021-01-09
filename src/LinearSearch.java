@@ -5,6 +5,7 @@ public class LinearSearch {
         for (int i = 0; i < arr.length ; i++) {
             if (arr[i] == element){
                 result = arr[i];
+                break;
             }else {
                 throw new RuntimeException("No such element: " + element);
             }
