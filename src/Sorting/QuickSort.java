@@ -5,10 +5,18 @@ import java.util.Arrays;
 public class QuickSort {
 
 
+    public void quickSort(int[]arr, int start, int end){
+        int position = 0;
+        if (start < end) {
+           position = partition(arr, start, end);
+        }
+     //   quickSort(arr, start, position - 1);
+      //  quickSort(arr, position + 1, end);
+    }
 
-    public void quickSort(int[] arr){
-        int start = 0;
-        int end = arr.length - 1;
+    private int partition(int[] arr, int start, int end){
+        start = 0;
+        end = arr.length - 1;
         int pivot = arr[start];
 
         System.out.println(Arrays.toString(arr));
@@ -20,12 +28,19 @@ public class QuickSort {
                 end--;
             }
             if (start > end){
+                int temp = arr[end];
+                arr[end] = arr[0];
+                arr[0] = temp;
                 break;
             }
-            swap(arr, start, end);
+
+           swap(arr, start, end);
+
         }
-        swap(arr, 0, end);
+
         System.out.println(Arrays.toString(arr));
+
+        return arr[end];
 
     }
 
