@@ -1,34 +1,35 @@
 package DataStructures.Heap;
 
-public class Heap {
+import java.util.Arrays;
+
+public class MaxHeap {
 
 
     private int[] arr;
     private int size;
+    private int temp;
 
-    public Heap(){
-        this.size = 1;
+    public MaxHeap(int size){
+        this.size = size;
         arr = new int[size];
+        temp = 0;
     }
 
 
     public void insert(int element){
-        int[] temp = new int[size + 1];;
-        temp[temp.length- 1] = element;
-        System.arraycopy(arr, 0, temp, 0, arr.length);
-        arr = temp;
-        int i = arr.length - 1;
-        int parent = (i - 1) / 2;
-
-        if (i == 1){
-            arr[i] = element;
-            i++;
-        }else if (i > 1) {
-            while (i > 1) {
+        if (temp == 0){
+            arr[temp] = element;
+            temp++;
+        }else if (temp > 0) {
+            arr[temp] = element;
+            int i = temp;
+            temp++;
+            while (i > 0) {
+                int parent = (i - 1) / 2;
                 if (arr[parent] < arr[i]) {
-                    int t = arr[parent];
+                    int temp1 = arr[parent];
                     arr[parent] = arr[i];
-                    arr[i] = t;
+                    arr[i] = temp1;
                     i = parent;
                 } else {
                     return;
