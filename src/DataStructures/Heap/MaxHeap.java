@@ -8,6 +8,7 @@ public class MaxHeap {
     private int[] arr;
     private int size;
     private int temp;
+    private int index;
 
     public MaxHeap(int size){
         this.size = size;
@@ -16,27 +17,32 @@ public class MaxHeap {
     }
 
 
-    public void insert(int element){
-        if (temp == 0){
+    public void insert(int element) {
+        if (temp == 0) {
             arr[temp] = element;
             temp++;
-        }else if (temp > 0) {
+        } else if (temp == arr.length) {
+            int[] temp = new int[arr.length + 1];
+            System.arraycopy(arr, 0, temp, 0, arr.length);
+        } else if (temp > 0) {
             arr[temp] = element;
-            int i = temp;
+            index = temp;
             temp++;
-            while (i > 0) {
-                int parent = (i - 1) / 2;
-                if (arr[parent] < arr[i]) {
+            while (index > 0) {
+                int parent = (index - 1) / 2;
+                if (arr[parent] < arr[index]) {
                     int temp1 = arr[parent];
-                    arr[parent] = arr[i];
-                    arr[i] = temp1;
-                    i = parent;
+                    arr[parent] = arr[index];
+                    arr[index] = temp1;
+                    index = parent;
                 } else {
                     return;
                 }
             }
         }
     }
+
+
 
 
     @Override
