@@ -1,20 +1,15 @@
 package DataStructures.BinaryTree;
 
+import Sorting.MergeSort;
+
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
-        SplayTree splayTree = new SplayTree();
-        splayTree.insert(1);
-        splayTree.insert(8);
-        splayTree.insert(10);
-        splayTree.insert(13);
-        splayTree.insert(7);
-        splayTree.insert(6);
-        splayTree.insert(3);
-        splayTree.insert(2);
-        splayTree.insert(3);
-
-        splayTree.inOrder();
+        int[] arr = new int[]{1,8,7,3,1,4,2,10,-110};
+        MergeSort.mergeSort(arr, 0, arr.length -1);
+        System.out.printf(Arrays.toString(arr));
 
     }
 }

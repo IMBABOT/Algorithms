@@ -6,7 +6,7 @@ public class MergeSort {
 
     public static void mergeSort(int[] arr, int start, int end){
         if (start < end){
-            int mid = start + (end-start) / 2;
+            int mid = (start + end) / 2;
             mergeSort(arr, start, mid);
             mergeSort(arr, mid+1, end);
             merge(arr, start, mid, end);
@@ -20,7 +20,7 @@ public class MergeSort {
         int[] result = new int[arr.length];
 
         while (i <= mid && j <= end){
-            if (arr[i] < arr[j]){
+            if (arr[i] <= arr[j]){
                 result[k] = arr[i];
                 i++;
             }else {
@@ -29,21 +29,19 @@ public class MergeSort {
             }
             k++;
         }
-        if (i > mid){
-            while (j < end){
-                result[k] = arr[j];
-                k++;
-                j++;
-            }
-        }else {
-            while (i <= mid){
-                result[k] = arr[i];
-                k++;
-                i++;
-            }
+        while (i <= mid){
+            result[k] = arr[i];
+            i++;
+            k++;
         }
+        while (j <= end){
+            result[k] = arr[j];
+            k++;
+            j++;
+        }
+
         for (int l = start; l <=end ; l++) {
-            result[l] = arr[l];
+           arr[l] = result[l];
         }
     }
 }
