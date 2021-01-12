@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{81,1,4,5,36,3,37,1,3,3,2,3,186,7};
+        int[] arr = new int[]{3,2,8,6,7};
         System.out.println(Arrays.toString(CountingSort.countingSort(arr)));
     }
 
