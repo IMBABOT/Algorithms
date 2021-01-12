@@ -16,6 +16,7 @@ public class CountingSort {
         for (int i = 0; i < arr.length; i++) {
             count[arr[i]]++;
         }
+
         for (int i = 1; i <= max ; i++) {
             count[i] = count[i] + count[i-1];
         }
@@ -24,7 +25,9 @@ public class CountingSort {
             array[--count[arr[i]]] = arr[i];
         }
 
-        arr = array;
+        for (int i = 0; i <arr.length ; i++) {
+            arr[i] = array[i];
+        }
 
         return arr;
     }
