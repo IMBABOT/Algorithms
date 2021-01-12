@@ -17,8 +17,14 @@ public class CountingSort {
             if (i == 0){
                 count[arr[i]]--;
             }
+            if (i == arr.length-1){
+                count[arr[i]]++;
+            }
         }
 
+        for (int i = 1; i <count.length ; i++) {
+            count[i] = count[i] + count[i - 1];
+        }
         return count;
     }
 }
